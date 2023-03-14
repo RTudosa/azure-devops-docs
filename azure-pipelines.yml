@@ -4,7 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+  none
+
+schedules:
+- cron: "0 5 * * *" 
+  displayName: 'Changing name'
+  branches:
+    include:
+    - main
+  always: true
 
 variables:
 
